@@ -1,26 +1,58 @@
-# Siamese and Triplet Network for Image Similarity Learning
+# **Siamese and Triplet Network for Image Similarity Learning**
 
-This repository implements Siamese and Triplet neural networks to perform image similarity learning. It includes tools for loading datasets, training models, performing hyperparameter tuning, and evaluating results.
+This repository implements **Siamese Networks** as presented in the paper [*"Siamese Neural Networks for One-shot Image Recognition"*](https://www.cs.toronto.edu/~rsalakhu/papers/oneshot1.pdf) by Koch et al., with an **extension to Triplet Loss**. The addition of Triplet Loss allows the model to learn embeddings that preserve relative similarity relationships, useful for tasks like image retrieval and clustering.
 
 ---
 
 ## **Features**
-- **Siamese Network**: Trained using binary cross-entropy loss to predict image pair similarity.
-- **Triplet Network**: Trained using triplet margin loss to learn embeddings that maintain similarity relationships.
-- **Dataset Loading**: Utilities for loading, augmenting, and preparing datasets.
-- **Grid Search**: Hyperparameter tuning for optimal model performance.
-- **Visualization**: Tools to visualize training progress and predictions.
+
+- **Siamese Network**: Implements the classic Siamese architecture using binary cross-entropy loss for pairwise similarity prediction.
+- **Triplet Network Extension**: Allows the use of Triplet Margin Loss for embedding learning using anchor-positive-negative triplets.
+- **End-to-End Process**: Full pipeline for data loading, preprocessing, training, and evaluation.
+- **Grid Search for Hyperparameter Tuning**: Supports hyperparameter tuning for both the **Siamese Network** and the **Triplet Network** extensions.
 
 ---
 
 ## **Repository Structure**
-- `dataset.py`: Dataset classes (`SiameseDataset`, `TripletDataset`) and initialization utilities.
-- `LFWDataLoader.py`: Tools for loading and preprocessing the LFW dataset.
-- `model.py`: Implementations of the Siamese and Triplet network architectures.
-- `train.py`: Training pipelines for Siamese and Triplet models.
-- `utils.py`: Utilities for logging, saving results, and evaluation.
+
+- `dataset.py` - Utilities for creating datasets for **Siamese** and **Triplet** training.
+- `LFWDataLoader.py` - Loading and preprocessing the Labeled Faces in the Wild (LFW) dataset.
+- `model.py` - Model architectures for **Siamese Network** and **Triplet Network**.
+- `train.py` - Training pipelines for both networks.
+- `utils.py` - Helper functions for logging, saving results, and evaluation.
+- `experiments.ipynb` - **Jupyter Notebook** performing the complete workflow: 
+    - Data Loading
+    - Hyperparameter Grid Search
+    - Training and Evaluation of both **Siamese** and **Triplet Network** models.
 
 ---
+
+## **Experiments.ipynb**
+
+The **`experiments.ipynb`** notebook demonstrates the end-to-end process:
+
+1. **Data Preparation**:
+   - Load and preprocess the dataset using utilities provided in `LFWDataLoader.py`.
+   - Create datasets for **Siamese Pairs** and **Triplets**.
+
+2. **Grid Search**:
+   - Perform hyperparameter tuning for both the **Siamese Network** (using binary cross-entropy loss) and the **Triplet Network** (using Triplet Margin Loss).
+
+3. **Training and Evaluation**:
+   - Train the models using optimized hyperparameters.
+   - Evaluate the performance on the test dataset for both approaches.
+
+4. **Results Visualization**:
+   - Visualize training loss, accuracy, and predictions.
+
+---
+
+## **Setup**
+
+### **Requirements**
+Install dependencies:
+```bash
+pip install -r requirements.txt
 
 ## **Setup**
 
