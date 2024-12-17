@@ -46,14 +46,6 @@ The **`experiments.ipynb`** notebook demonstrates the end-to-end process:
    - Visualize training loss, accuracy, and predictions.
 
 ---
-
-## **Setup**
-
-### **Requirements**
-Install dependencies:
-```bash
-pip install -r requirements.txt
-
 ## **Setup**
 
 ### **Requirements**
